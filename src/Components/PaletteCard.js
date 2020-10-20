@@ -1,18 +1,23 @@
 import React from "react";
 
 const PaletteCard = (props) => {
-  console.log(props.palette);
+  let colors = [];
+  for (let color of props.palette.colors) {
+    colors.push("#" + color);
+  }
   return (
     <div key={props.palette.id}>
       <p>PaletteName: {props.palette.title}</p>
       <p>Creator: {props.palette.userName}</p>
       <p>Date: {props.palette.dateCreated}</p>
       <p>Votes: {props.palette.numVotes}</p>
-      {/* <span>
-        {props.palette.colors.map((color) => (
-          <div key={color} style={{ background: rgba({color}) }}>{color}</div>
+      <span>
+        {colors.map((color) => (
+          <div key={color} style={{ background:  color  }}>
+            {color}
+          </div>
         ))}
-      </span> */}
+      </span>
     </div>
   );
 };
