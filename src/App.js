@@ -1,26 +1,18 @@
 import "./App.css";
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import { PaletteProvider } from "./Context/PaletteContext";
+import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Palettes from "./Components/Palettes";
 
 function App() {
-  const [palettes, setPalettes] = useState([]);
-  useEffect(() => {
-    const options = {
-      url: "http://www.colourlovers.com/api/palettes/new?format=json",
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    };
-    axios(options).then((resp) => {
-      console.log(resp.data);
-      setPalettes(resp.data);
-    });
-  }, []);
   return (
-    <div className="App">
-      <h1>ColourLovers.Live</h1>
-    </div>
+    <>
+      <Router>
+        <PaletteProvider>
+          <Route exact path={"/"} component={Palettes}/>
+        </PaletteProvider>
+      </Router>
+    </>
   );
 }
 
