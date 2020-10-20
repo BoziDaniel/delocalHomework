@@ -13,7 +13,7 @@ export const PaletteProvider = (props) => {
       },
     };
     axios(options).then((resp) => {
-      console.log(resp.data);
+    //   console.log(resp.data);
       setPalettes(resp.data);
     });
   }, []);
