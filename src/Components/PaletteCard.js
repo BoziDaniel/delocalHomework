@@ -17,9 +17,11 @@ const PaletteCard = (props) => {
           <div>
             <b>{props.palette.title}</b>
           </div>
-          <div> {props.palette.userName}</div>
-          <div> {props.palette.dateCreated.slice(10, 15)}</div>
-          <span>
+          <div>
+            by {props.palette.userName} at
+            {props.palette.dateCreated.slice(10, 16)}
+          </div>
+          <span style={{ backgroundColor: "#044d78", padding: "1%" }}>
             Views: {props.palette.numViews} Votes: {props.palette.numVotes}
           </span>
           <Row style={{ width: "95%" }}>

@@ -27,8 +27,14 @@ const Palettes = () => {
   ]);
 
   return (
-    <div>
-      <h1>ColourLovers.Live</h1>
+    <div style={{ backgroundColor: "#009bf8", color: "white" }}>
+      <Row>
+        <Col xs={{ span: 11, offset: 1 }}>
+          <h1 style={{ color: "white" }}>
+            ColourLovers.<b>Live</b>
+          </h1>
+        </Col>
+      </Row>
       <Row>
         <Col xs={{ span: 11, offset: 1 }}>
           {firstCol !== [] && firstCol !== undefined
