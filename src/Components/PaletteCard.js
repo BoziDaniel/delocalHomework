@@ -10,7 +10,7 @@ const PaletteCard = (props) => {
     <div
       key={props.palette.id}
       title={props.palette.title}
-      style={{ height: "30vh" }}
+      style={{ height: "25vh" }}
     >
       <Row style={{ width: "95%" }}>
         <Col span={23}>
@@ -28,7 +28,7 @@ const PaletteCard = (props) => {
             {colors.map((color) => (
               <div
                 key={color}
-                style={{ background: color, height: "8vw", width: "20%" }}
+                style={{ background: color, height: "10vh", width: "20%" }}
               ></div>
             ))}
           </Row>
