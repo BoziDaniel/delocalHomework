@@ -13,22 +13,20 @@ const PaletteCard = (props) => {
       style={{ height: "25%" }}
     >
       <Row style={{ width: "95%" }}>
-        <Col span={12}>
+        <Col span={12} >
           <div>{props.palette.title}</div>
           <div> {props.palette.userName}</div>
           <div> {props.palette.dateCreated.slice(10)}</div>
           <div>Votes: {props.palette.numVotes}</div>
         </Col>
-        <Col span={11}>
-          <Row style={{ width: "95%" }}>
-            {colors.map((color) => (
-              <div
-                key={color}
-                style={{ background: color, height: "13vw", width: "20%" }}
-              ></div>
-            ))}
-          </Row>
-        </Col>
+        <Row style={{ width: "95%" }}>
+          {colors.map((color) => (
+            <div
+              key={color}
+              style={{ background: color, height: "10vw", width: "20%" }}
+            ></div>
+          ))}
+        </Row>
       </Row>
     </div>
   );
