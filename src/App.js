@@ -4,16 +4,16 @@ import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Palettes from "./Components/Palettes";
 
-function App() {
+const App = () => {
   return (
     <>
       <Router>
         <PaletteProvider>
-          <Route exact path={"/"} component={Palettes}/>
+          <Route exact path={"/"} component={Palettes} />
         </PaletteProvider>
       </Router>
     </>
   );
-}
+};
 
 export default App;

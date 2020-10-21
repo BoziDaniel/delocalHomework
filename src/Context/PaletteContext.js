@@ -3,6 +3,7 @@ import axios from "axios";
 
 export const PaletteContext = createContext();
 export const PaletteProvider = (props) => {
+  const [palettes, setPalettes] = useState([]);
   const [firstCol, setFirstCol] = useState([]);
   const [secondCol, setSecondCol] = useState([]);
   const [amountToShow, setAmountToShow] = useState(10);
@@ -17,6 +18,7 @@ export const PaletteProvider = (props) => {
     };
 
     axios(options).then((resp) => {
+      setPalettes(resp.data);
       let first = [];
       let second = [];
       for (let i = 0; i < amountToShow; i++) {
@@ -28,7 +30,6 @@ export const PaletteProvider = (props) => {
       }
       setFirstCol(first);
       setSecondCol(second);
-      console.log(resp.data);
     });
   }, [amountToShow]);
 
@@ -41,6 +42,8 @@ export const PaletteProvider = (props) => {
         setFirstCol,
         secondCol,
         setSecondCol,
+        palettes,
+        setPalettes,
       }}
     >
       {props.children}
