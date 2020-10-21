@@ -10,7 +10,7 @@ export const PaletteProvider = (props) => {
 
   useEffect(() => {
     const options = {
-      url: "http://www.colourlovers.com/api/palettes/new?format=json",
+      url: "/api/palettes/new?format=json",
       method: "GET",
       headers: {
         "Content-Type": "application/json",
