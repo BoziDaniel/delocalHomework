@@ -28,7 +28,7 @@ const PaletteCard = (props) => {
             {colors.map((color) => (
               <div
                 key={color}
-                style={{ background: color, height: "10vh", width: "20%" }}
+                style={{ background: color, height: "9vh", width: "20%" }}
               ></div>
             ))}
           </Row>
