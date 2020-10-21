@@ -1,4 +1,5 @@
 import React from "react";
+import { Card, Row, Col } from "antd";
 
 const PaletteCard = (props) => {
   let colors = [];
@@ -6,18 +7,29 @@ const PaletteCard = (props) => {
     colors.push("#" + color);
   }
   return (
-    <div key={props.palette.id}>
-      <p>PaletteName: {props.palette.title}</p>
-      <p>Creator: {props.palette.userName}</p>
-      <p>Date: {props.palette.dateCreated}</p>
-      <p>Votes: {props.palette.numVotes}</p>
-      <span>
-        {colors.map((color) => (
-          <div key={color} style={{ background:  color  }}>
-            {color}
-          </div>
-        ))}
-      </span>
+    <div
+      key={props.palette.id}
+      title={props.palette.title}
+      style={{ height: "25%" }}
+    >
+      <Row style={{ width: "95%" }}>
+        <Col span={12}>
+          <div>{props.palette.title}</div>
+          <div> {props.palette.userName}</div>
+          <div> {props.palette.dateCreated.slice(10)}</div>
+          <div>Votes: {props.palette.numVotes}</div>
+        </Col>
+        <Col span={11}>
+          <Row style={{ width: "95%" }}>
+            {colors.map((color) => (
+              <div
+                key={color}
+                style={{ background: color, height: "13vw", width: "20%" }}
+              ></div>
+            ))}
+          </Row>
+        </Col>
+      </Row>
     </div>
   );
 };
